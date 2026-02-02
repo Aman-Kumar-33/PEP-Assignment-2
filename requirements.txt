@@ -1,5 +1,13 @@
+# Flask
+# numpy
+# pandas
+# gunicorn
+# torch
+# torchvision
+# facenet-pytorch
+# pillow
 Flask
-numpy
+numpy==1.26.4
 pandas
 gunicorn
 torch
