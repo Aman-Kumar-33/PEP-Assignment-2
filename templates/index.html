@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Attendance</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Smart Attendance System</h1>
+    </header>
+
+    <div class="container">
+      <h2>System Dashboard</h2>
+
+      <div style="margin-bottom: 25px">
+        <a href="/register" class="btn btn-secondary">
+          ➕ Register New Student
+        </a>
+      </div>
+
+      <div class="camera-box">
+        <video id="videoElement" autoplay playsinline></video>
+        <canvas id="canvasElement" style="display: none"></canvas>
+      </div>
+
+      <div id="status">Status: Idle</div>
+
+      <div style="margin-top: 2rem">
+        <button onclick="startAttendance()" class="btn">
+          ▶ Start Attendance
+        </button>
+        <button onclick="stopAttendance()" class="btn btn-danger">
+          ⏹ Stop
+        </button>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
