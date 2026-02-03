@@ -104,6 +104,19 @@
 
 # if __name__ == '__main__':
 #     app.run(debug=True)
+# import os
+# import base64
+# import numpy as np
+# import cv2
+# import pandas as pd
+# from flask import Flask, render_template, request, jsonify
+# from datetime import datetime
+# import torch
+# from facenet_pytorch import MTCNN, InceptionResnetV1
+# from PIL import Image
+# from io import BytesIO
+# # ... existing imports ...
+# import glob
 import os
 import base64
 import numpy as np
@@ -115,9 +128,14 @@ import torch
 from facenet_pytorch import MTCNN, InceptionResnetV1
 from PIL import Image
 from io import BytesIO
-# ... existing imports ...
 import glob
 
+# --- MEMORY OPTIMIZATION FOR RENDER ---
+torch.set_num_threads(1)
+# --------------------------------------
+
+app = Flask(__name__)
+# ... rest of your code ...
 # --- HELPER: JOIN MODEL PARTS ---
 def stitch_model():
     """
@@ -148,10 +166,7 @@ def stitch_model():
 # --- CALL THE STITCH FUNCTION ---
 stitch_model() 
 
-# --- AI SETUP ---
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-# ... rest of your code ...
-app = Flask(__name__)
+
 
 # --- CONFIGURATION ---
 DATASET_FOLDER = 'dataset'
