@@ -7,6 +7,7 @@
 # facenet-pytorch
 # pillow
 Flask
+Flask
 gunicorn
 numpy
 pandas
@@ -14,3 +15,4 @@ torch
 torchvision
 facenet-pytorch
 pillow
+opencv-python-headless
