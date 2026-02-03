@@ -461,8 +461,9 @@ mtcnn = MTCNN(keep_all=False, device=device)
 
 # Face Recognizer (InceptionResnetV1)
 # FIX: We set classify=True initially because the weights file contains "logits" layers.
-resnet = InceptionResnetV1(pretrained=None, classify=True)
-
+# resnet = InceptionResnetV1(pretrained=None, classify=True)
+# num_classes=8631 is required to match the shape of the vggface2 weights file
+resnet = InceptionResnetV1(pretrained=None, classify=True, num_classes=8631)
 try:
     model_path = os.path.join(MODELS_FOLDER, '20180402-114759-vggface2.pt')
     if os.path.exists(model_path):
