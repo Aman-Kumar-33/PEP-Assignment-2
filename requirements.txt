@@ -6,13 +6,23 @@
 # torchvision
 # facenet-pytorch
 # pillow
-Flask
+#Flask
+#Flask
+#gunicorn
+#numpy
+#pandas
+#torch
+#torchvision
+#facenet-pytorch
+#pillow
+#opencv-python-headless
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.1.0
+torchvision==0.16.0
 Flask
 gunicorn
 numpy
 pandas
-torch
-torchvision
 facenet-pytorch
 pillow
 opencv-python-headless
